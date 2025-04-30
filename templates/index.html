@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice Questions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% for chapter in data.chapters %}
+            <div class="chapter">
+                <h2 class="chapter-title">Chapter {{ chapter.chapterNumber }}: {{ chapter.chapterTitle }}</h2>
+
+                {% for question in chapter.questions %}
+                    {% set question_index = loop.index %}
+                    <div class="question-block">
+                        <p class="question-text">
+                            {{ question_index }}. {{ question.questionText }}
+                        </p>
+                        <div class="answers">
+                            {% for answer in question.answers %}
+                                {% set letters = ['a', 'b', 'c', 'd'] %}
+                                <p class="answer">{{letters[loop.index0]}}) {{answer}}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+    </div>
+</body>
+</html>
