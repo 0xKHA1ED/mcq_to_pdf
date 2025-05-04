@@ -1,0 +1,23 @@
+{
+  "name": "mcq_to_pdf",
+  "version": "1.0.0",
+  "description": "A simple Flask web application designed to display multiple-choice questions (MCQs) organized by chapters. Currently, it serves as a static viewer for predefined question data.",
+  "main": "generate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xKHA1ED/mcq_to_pdf.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xKHA1ED/mcq_to_pdf/issues"
+  },
+  "homepage": "https://github.com/0xKHA1ED/mcq_to_pdf#readme",
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}

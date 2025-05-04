@@ -12,7 +12,7 @@
     <div class="container">
         {% for chapter in data.chapters %}
             <div class="chapter">
-                <h2 class="chapter-title">Chapter {{ chapter.chapterNumber }}: {{ chapter.chapterTitle }}</h2>
+                <h2 class="chapter-title">{{ chapter.chapterTitle }}</h2>
 
                 {% for question in chapter.questions %}
                     {% set question_index = loop.index %}

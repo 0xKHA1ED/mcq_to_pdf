@@ -5,6 +5,8 @@
     --bg-question: #F0F9FF;
     --bg-answer: #F9FAFB;
     --bg-answer-hover: #E0F2FE;
+    
+    --color-danger: #EE2E31;
 
     /* Spacing scale (can be used for padding, margin, gaps) */
     --space-0: 0;
@@ -48,6 +50,12 @@ body {
     margin: auto;
     padding: var(--space-5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-left: 6px solid #4a90e2; /* modern accent color */
+    border-radius: 10px;
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 1px #ddd; /* subtle inner border */
   }
   
   .chapter {

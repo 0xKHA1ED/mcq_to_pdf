@@ -1,7 +1,24 @@
-from flask import Flask, render_template
+from flask import Flask, send_file, render_template
 import json
+import subprocess
 
 app = Flask(__name__)
+
+
+@app.route('/generate-pdf')
+def generate_pdf():
+    pdf_output_path = 'output.pdf'
+    url = 'http://localhost:5000/'
+
+    try:
+        subprocess.run([
+            'node', 'generate.js', url, pdf_output_path
+        ], check=True)
+
+        return send_file(pdf_output_path, as_attachment=True)
+
+    except subprocess.CalledProcessError as e:
+        return f"Error generating PDF: {e}", 500
 
 
 @app.route('/')
